@@ -1,0 +1,6 @@
+
+Zmiany w aplikacji find_friends
+
+1. uporządkowanie selectbox'a wiek - wiek umieściłem po kolei
+2. 
+
