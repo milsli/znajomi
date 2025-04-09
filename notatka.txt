@@ -1,6 +1,21 @@
 
-Zmiany w aplikacji find_friends
+Założenia aplikacji find_friends:
 
-1. uporządkowanie selectbox'a wiek - wiek umieściłem po kolei
-2. 
+1. Dane do analizy zawarte w pliku     welcome_survey_simple_v2.csv
+2. Użytkownik dostaje pomocniczego notebooka support.ipynb, który tworzy w formacie JSON czytelne nazwy klastrów i ich opisy
+wygenerowane przez AI. Jeżeli nie chce/nie może tego zrobić dostaje gotowy plik cluster_names_and_descriptions.json
+W zasadzie funkcja taka mogłoby być zamieszczona w aplikacji ale wymagałoby to od użytkownika posiadania konta w OpenAI.
+3. W jednej aplikacji zaistniała możliwość wyeliminowania procesu zapisywania i odczytywania pipeline'u.
+
+Zmiany w aplikacji
+
+1. uporządkowanie selectbox'a wiek - wiek umieściłem po kolei: 
+['<18',  '18-24', '25-34', '35-44', '45-54', '55-64','>=65', 'unknown']
+2. Zaimplemetowana została jedna funkcja do przygotowania danych prepare_data(). Dokonuje ona odczytu danych z pliku, 
+tworzenie modelu i dodawania do DataFrame'a kolumny z klastrami.
+3. Jak zaznaczono wcześniej aplikacja nie korzysta z pipeline'u.
+
+Reszta w zasadzie bez zmian
+
+
 

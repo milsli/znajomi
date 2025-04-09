@@ -8,7 +8,7 @@ DATA = 'welcome_survey_simple_v2.csv'
 CLUSTER_NAMES_AND_DESCRIPTIONS = 'cluster_names_and_descriptions.json'
 
 @st.cache_data
-def prepare_model():
+def prepare_data():
     all_df = pd.read_csv(DATA, sep=';')
     setup(all_df, session_id=901)
     kmeans = create_model('kmeans', num_clusters=8)
@@ -40,10 +40,8 @@ with st.sidebar:
     ])
 
 
-kmeans, assigned_model_df = prepare_model()
+kmeans, assigned_model_df = prepare_data()
 cluster_names_and_descriptions = get_cluster_names_and_descriptions()
-
-
 
 predicted_cluster_id = predict_model(kmeans, data=person_df)["Cluster"].values[0]
 predicted_cluster_data = cluster_names_and_descriptions[predicted_cluster_id]
